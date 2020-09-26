@@ -1,5 +1,10 @@
 # Saskatchewan-Rural-Municipality-Map
 
+A community generated map of rural municipalities in Saskatchewan, Canada. This repository includes two universal file formats of the same mapping layer for use in any GIS software (eg. QGIS) or data science focused programming language (eg. Python, R, etc.).
+
+- data/Saskatchewan RMs.gpkg
+- data/Saskatchewan-RMs.geojson
+
 ![township.jpg](images/township.jpg)
 
 
@@ -24,6 +29,34 @@ The map was created and updated based on the following sources:
 - National Topographic Series CanVec water features (50K resolution)
 
 These data sources were combined in QGIS, referencing the Sask government's read-only web layer, as well as CSDs from Statistics Canada and some historic maps (in order to figure out the "imaginary" boundaries that pass through reserves and towns).
+
+## Use
+
+### Python
+
+```{python}
+import geopandas as gpd
+
+sask_rms = gpd.read_file('./data/Saskatchewan-RMs.geojson')
+
+sask_rms.info()
+sask_rms.head()
+```
+
+### R
+
+```{r}
+library(sf)
+
+sask_rms <- sf::st_read('./data/Saskatchewan-RMs.geojson')
+
+str(sask_rms)
+head(sask_rms)
+```
+
+### QGIS
+
+See [QGIS documentation](https://docs.qgis.org/2.6/pt_PT/docs/training_manual/introduction/preparation.html)
 
 ## Credits
 
