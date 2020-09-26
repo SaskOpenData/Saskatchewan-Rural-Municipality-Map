@@ -30,7 +30,7 @@ The map was created and updated based on the following sources:
 
 These data sources were combined in QGIS, referencing the Sask government's read-only web layer, as well as CSDs from Statistics Canada and some historic maps (in order to figure out the "imaginary" boundaries that pass through reserves and towns).
 
-## Use
+## Using the data
 
 ### Python
 
